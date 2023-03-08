@@ -20,6 +20,10 @@ namespace TaskRunner
             }
 
             Assembly assembly = null;
+            if (assemblyFilePath.EndsWith("NuGet.Build.Tasks.dll"))
+            {
+                assemblyFilePath = @"C:\Projects\GitHub\NuGet.Client\artifacts\NuGet.Build.Tasks\bin\Debug\netstandard2.0\NuGet.Build.Tasks.dll";
+            }
             if (File.Exists(assemblyFilePath))
             {
                 assembly = Assembly.LoadFrom(assemblyFilePath);
